@@ -21,4 +21,5 @@ public class DadosController {
 	public void getServidor(@PathVariable String servidor) {
 		
 	}
+	//TODO adicionar o método post
 }

@@ -35,7 +35,8 @@ public class PortalDadosApplication implements CommandLineRunner{
 		
 //		jdbcTemplate.execute("DROP TABLE IF Arvores EXISTS");
 //		jdbcTemplate.execute("CREATE TABLE Arvores (id INT PRIMARY KEY, nome VARCHAR(255)");
-//		jdbcTemplate.execute("SELECT * FROM");  //TODO adicionar conexão com o banco PRTG
+//		jdbcTemplate.execute("SELECT * FROM");  
+//TODO adicionar conexão com o banco PRTG
 		
 		}catch (Exception e) {
 			log.error("Erro ao executar Script!");
