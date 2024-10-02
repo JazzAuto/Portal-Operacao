@@ -10,7 +10,7 @@ async function server(request, response){
     
     
     const dynamicDate = new Date();
-    const alertaResponse = await fetch(`https://172.16.70.12/api/table.json?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue,priority,favorite&apitoken=${apiToken}`);//colocar a api
+    const alertaResponse = await fetch(`https://172.16.70.12/api/table.json?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue,priority,favorite&apitoken=${apiToken}`);
 
     if(!alertaResponse.ok){
         throw new Error(`Não foi possível coletar as informações. Status: ${alertaResponse.status}`);
@@ -21,16 +21,18 @@ async function server(request, response){
 
     response.json({
         date: dynamicDate.toGMTString(),
-        dados: dadosFiltrados
-        //TODO conteúdo do arquivo json filtrando o que não for usado 
+        dadosAlerta: dadosFiltrados
+        
     })
 
 }catch(error){
+    console.error("An error occurred:", error.message);
+    response.status(500).json({ error: error.message });
     return("Erro ao tentar acessar a página, tente novamente mais tarde");
 }
-
+//TODO conteúdo do arquivo json filtrando o que não for usado 
 function dadosFiltrados(dados){
-    const camposPermitidos=[""];
+    const camposPermitidos=["id85"];
     return camposPermitidos.reduce((filtro, campo) =>{
         if(dados[campo]){
             filtro[campo]=dados[campo];
