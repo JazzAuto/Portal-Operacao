@@ -4,9 +4,7 @@ async function (request, response){
     const alertaResponse = await fetch(`secret=${apiSecret}`);//colocar a api
     const alertaResponseJson = await alertaResponse.json();
     const dadosAlerta = alertaResponseJson;
-
-    response.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
-    
+   
     response.json({
         date: dynamicDate.toGMTString()
         //TODO conteúdo do arquivo json filtrando o que não for usado 
