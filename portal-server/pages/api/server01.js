@@ -1,7 +1,6 @@
-async function server(request, response){
+async function server01(request, response){
 
     try{
-    console.log(request.query.server);
     const apiToken = process.env.PORTAL_API_TOKEN;
     
     if(!apiToken){
@@ -41,3 +40,4 @@ function dadosFiltrados(dados){
     },{});
 }
 }
+export default server01;
