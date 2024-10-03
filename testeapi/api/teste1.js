@@ -9,6 +9,8 @@ async function teste1(request, response){
   Teste de fetch com novo front/back;
 
   Uso de return imediatamente abaixo de fetch();
+
+  https://nextjs.org/docs/app/building-your-application/data-fetching/incremental-static-regeneration
   */
 
   
