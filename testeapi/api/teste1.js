@@ -4,7 +4,11 @@ async function teste1(request, response){
   /*
   TODO: criação do bloco try catch para tratamento de erros de arquivo, rede e funcionamento registrando em:
   console.log() || arquivo log || retorno simples de erro
-  para melhor análise
+  para melhor análise;
+
+  Teste de fetch com novo front/back;
+
+  Uso de return imediatamente abaixo de fetch();
   */
 
   
